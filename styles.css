@@ -1,0 +1,76 @@
+body{
+    margin: 0px;
+}
+
+
+
+.footer{
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    background-color: aqua;
+    box-shadow: aqua 2px 5px 5px;
+}
+
+.footer .ul .list{
+    display: inline-flex;
+   
+    padding: 1rem;
+    margin: 1rem;
+    
+}
+.footer .ul .list .link{
+    text-decoration: none;
+    /* line-height: px; */
+    box-sizing: border-box;
+    min-width: 80%;
+    max-width: 100%;
+    color: #24292e;
+
+} 
+.footer .ul .list .link:hover{
+    transition: 0.3s ease-in-out;
+    color: blueviolet;
+}
+/* footer links done */
+
+.header{
+    
+    font-size: large;
+    font-weight: 500;
+    background-color: #24292e;
+    color: aqua;
+    padding: 1.5rem 1rem; 
+    height: 3vh;
+    text-align: right;
+    box-shadow: #24292e 2px 5px 5px;
+    
+}
+input{
+    margin: 0.7rem 1rem;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: large;
+    box-shadow: #24292e 2px 5px 5px;
+    box-sizing: border-box;
+    min-width: 60%;
+    max-width: 100%;
+    border : 2px solid #24292e ;
+    outline: none;
+    
+}
+
+br{
+    height: 3vh;
+}
+button{
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: large;
+    background-color: aqua;
+    outline: none;
+    border-radius:1rem ;
+    box-shadow: #24292e 2px 5px 5px;
+    
+}
