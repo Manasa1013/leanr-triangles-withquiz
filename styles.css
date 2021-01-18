@@ -47,15 +47,15 @@ body{
     box-shadow: #24292e 2px 5px 5px;
     
 }
-input{
+input,output{
     margin: 0.7rem 1rem;
     padding: 1rem;
     font-weight: bold;
     font-size: large;
     box-shadow: #24292e 2px 5px 5px;
     box-sizing: border-box;
-    min-width: 60%;
-    max-width: 100%;
+    max-width: 70px;
+    width: 100%;
     border : 2px solid #24292e ;
     outline: none;
     
@@ -65,7 +65,7 @@ br{
     height: 3vh;
 }
 button{
-    margin: 1rem;
+    margin: 0rem 1.7rem;
     padding: 0.5rem;
     font-size: large;
     background-color: aqua;
@@ -73,4 +73,15 @@ button{
     border-radius:1rem ;
     box-shadow: #24292e 2px 5px 5px;
     
+}
+
+label{
+    font-weight: large;
+    font-size: x-large;
+    margin: 0.7rem 1rem;
+    
+}
+div{
+    margin-top: 1rem;
+    padding: 1rem;
 }
