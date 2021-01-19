@@ -13,7 +13,7 @@ function triangleValidity(){
     console.log(angles);
     let countPositiveAngles = 0
     angles.forEach(item => {
-        if(item>0){
+        if(item>0 && item <180){
             countPositiveAngles = countPositiveAngles+1;
         }})
             if(countPositiveAngles === 3){
