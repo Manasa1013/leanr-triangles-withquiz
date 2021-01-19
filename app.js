@@ -1,5 +1,5 @@
 let output = document.querySelector("output");
-
+let reset = document.querySelector("#reset")
 let result = document.createElement('div')
 
 document.body.appendChild(result)
@@ -39,9 +39,7 @@ function triangleValidity(){
 let btn = document.querySelector("#btn")
 btn.addEventListener("click",()=>{
     triangleValidity();
-    let reset = document.createElement('button')
-    document.body.appendChild(reset)
-    reset.innerHTML= `Reset`
+    reset.style.visibility = "visible"
     reset.addEventListener('click',()=>{
         document.querySelector("#angle-one").value = ""
         document.querySelector("#angle-two").value = ""
