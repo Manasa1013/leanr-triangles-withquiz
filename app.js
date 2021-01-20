@@ -49,21 +49,44 @@ btn.addEventListener("click",()=>{
 },false)
 
 let btnGetAngles = document.querySelector("#btn-get-angles")
+let btnSecond = document.querySelector("#btn-second")
 let resetSecond = document.querySelector("#reset-second")
 let resultSecond = document.createElement('div')
+
+//angles referenced
+let quesAngleOne = document.querySelector("#ques-angle-one")
+let quesAngleTwo = document.querySelector("#ques-angle-two")
+let quesAngleThree = document.querySelector("#ques-angle-three")
+
 document.body.appendChild(resultSecond)
 function triangleRandomValues(){
-    let quesAngleOne = document.querySelector("#ques-angle-one")
-    let quesAngleTwo = document.querySelector("#ques-angle-two")
-    let quesAngleThree = document.querySelector("#ques-angle-three")
-    let anglesSecond = [0,0,0]
+    
+    
+    //try tom.. to implement with arrays ,if can
     quesAngleOne.value = getRandomInt(1,150)
-    quesAngleTwo.value = getRandomInt(0,150-quesAngleOne.value)
+    quesAngleTwo.value = getRandomInt(1,150-quesAngleOne.value)
+    quesAngleThree.value = ""
+    resultSecond.innerHTML = ""
     
     // anglesSecond = [quesAngleOne.value,quesAngleTwo.value,quesAngleThree.value]
 }
 
 btnGetAngles.addEventListener('click',triangleRandomValues,false)
+function triangleThirdAngle(){
+    
+    let tempQuesAngleThree = quesAngleThree.value
+    tempQuesAngleThree = parseInt(tempQuesAngleThree,10)
+    let calculatedAngleThree = 180- quesAngleOne.value - quesAngleTwo.value
+    if(tempQuesAngleThree === calculatedAngleThree){
+        resultSecond.innerHTML = `<h2>You entered right✔👌</h2>`
+    }
+    else{
+        resultSecond.innerHTML = `<h2>Oops!!it's incorrect try again</h2>`
+    }
+    console.log(quesAngleOne.value,quesAngleTwo.value,quesAngleThree.value,+"\ncalculated third angle: "+calculatedAngleThree);
+}
+
+btnSecond.addEventListener("click",triangleThirdAngle,false)
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
