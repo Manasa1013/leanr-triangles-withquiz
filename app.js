@@ -48,7 +48,7 @@ btn.addEventListener("click",()=>{
     })
 },false)
 
-let btnSecond = document.querySelector("#btn-second")
+let btnGetAngles = document.querySelector("#btn-get-angles")
 let resetSecond = document.querySelector("#reset-second")
 let resultSecond = document.createElement('div')
 document.body.appendChild(resultSecond)
@@ -63,7 +63,7 @@ function triangleRandomValues(){
     // anglesSecond = [quesAngleOne.value,quesAngleTwo.value,quesAngleThree.value]
 }
 
-btnSecond.addEventListener('click',triangleRandomValues,false)
+btnGetAngles.addEventListener('click',triangleRandomValues,false)
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
