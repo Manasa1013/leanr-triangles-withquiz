@@ -33,7 +33,7 @@ function triangleValidity(){
             
             
             else{
-                result.innerHTML = `<h1>Enter angles greater than 0</h1>`
+                result.innerHTML = `<h1>Enter angles greater than 0 and less than 180</h1>`
             }
         }
 let btn = document.querySelector("#btn")

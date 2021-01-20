@@ -17,14 +17,14 @@ body{
     display: inline-flex;
    
     padding: 1rem;
-    margin: 1rem;
+    margin: 0.2rem;
     
 }
 .footer .ul .list .link{
     text-decoration: none;
     /* line-height: px; */
     box-sizing: border-box;
-    min-width: 80%;
+    min-width: 60%;
     max-width: 100%;
     color: #24292e;
 
@@ -81,7 +81,12 @@ label{
     margin: 0.7rem 1rem;
     
 }
-div{
+form{
     margin-top: 1rem;
     padding: 1rem;
+    color: #24292e;
+}
+form legend{
+    color: gray;
+    font-size: medium;
 }
