@@ -74,6 +74,13 @@ button{
     box-shadow: #24292e 2px 5px 5px;
     
 }
+ #btn-second{
+    margin: 1rem ;
+    box-shadow: none;
+    background-color: #24292e;
+    color: aqua;
+    font-size: medium;
+}
 
 label{
     font-weight: large;

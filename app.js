@@ -1,4 +1,4 @@
-let output = document.querySelector("output");
+let output = document.querySelector("#output-first");
 let reset = document.querySelector("#reset")
 let result = document.createElement('div')
 
@@ -47,3 +47,26 @@ btn.addEventListener("click",()=>{
         output.innerHTML = ""
     })
 },false)
+
+let btnSecond = document.querySelector("#btn-second")
+let resetSecond = document.querySelector("#reset-second")
+let resultSecond = document.createElement('div')
+document.body.appendChild(resultSecond)
+function triangleRandomValues(){
+    let quesAngleOne = document.querySelector("#ques-angle-one")
+    let quesAngleTwo = document.querySelector("#ques-angle-two")
+    let quesAngleThree = document.querySelector("#ques-angle-three")
+    let anglesSecond = [0,0,0]
+    quesAngleOne.value = getRandomInt(1,150)
+    quesAngleTwo.value = getRandomInt(0,150-quesAngleOne.value)
+    
+    // anglesSecond = [quesAngleOne.value,quesAngleTwo.value,quesAngleThree.value]
+}
+
+btnSecond.addEventListener('click',triangleRandomValues,false)
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+  }
