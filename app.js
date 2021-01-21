@@ -4,12 +4,16 @@ let result = document.createElement('div')
 
 document.body.appendChild(result)
 //afterwards try with arrays to store inputs' data :it's done
+//tomorrow 2201 implement div result,resultSecond elements in index page itself
 function triangleValidity(){
     let angles = [0,0,0]
     angles[0] = parseInt(document.querySelector("#angle-one").value , 10)
     angles[1] = parseInt(document.querySelector("#angle-two").value , 10)
     angles[2] = parseInt(document.querySelector("#angle-three").value , 10)
-
+    //implementing NaNToZero function onto angles holding variables
+    angles[0] = NaNToZero(angles[0])
+    angles[1] = NaNToZero(angles[1])
+    angles[2] = NaNToZero(angles[2])
     console.log(angles);
     let countPositiveAngles = 0
     angles.forEach(item => {
@@ -74,23 +78,68 @@ function triangleRandomValues(){
 
 btnGetAngles.addEventListener('click',triangleRandomValues,false)
 function triangleThirdAngle(){
-    
+    //usage with arrays ,try tom
+    let tempQuesAngleTwo = quesAngleTwo.value
+    let tempQuesAngleOne = quesAngleOne.value
     let tempQuesAngleThree = quesAngleThree.value
     tempQuesAngleThree = parseInt(tempQuesAngleThree,10)
-    let calculatedAngleThree = 180- quesAngleOne.value - quesAngleTwo.value
+    tempQuesAngleTwo = parseInt(tempQuesAngleTwo,10)
+    tempQuesAngleOne = parseInt(tempQuesAngleOne,10)
+
+    console.table(tempQuesAngleOne,tempQuesAngleTwo,tempQuesAngleThree) // logging onto console
+    //implementing NaNToZero on three angles vars for betterment.
+    tempQuesAngleOne = NaNToZero(tempQuesAngleOne)
+    tempQuesAngleTwo = NaNToZero(tempQuesAngleTwo)
+    tempQuesAngleThree = NaNToZero(tempQuesAngleThree)
+    //logging onto console,after converting to zero
+    console.log(tempQuesAngleOne,tempQuesAngleTwo,tempQuesAngleThree)
+    //
+    if(tempQuesAngleOne === 0 || tempQuesAngleTwo === 0){
+        resultSecond.innerHTML = `<h1>Click on 'Get angles' to get first and second angle</h1>`
+    }
+    else{
+        let calculatedAngleThree = 180- tempQuesAngleOne - tempQuesAngleTwo
+        calculatedAngleThree = NaNToZero(calculatedAngleThree);
     if(tempQuesAngleThree === calculatedAngleThree){
         resultSecond.innerHTML = `<h2>You entered right✔👌</h2>`
     }
     else{
-        resultSecond.innerHTML = `<h2>Oops!!it's incorrect try again</h2>`
+        if(tempQuesAngleThree === 0){
+            resultSecond.innerHTML =  `<h1>Enter value/s greater than zero</h1>`
+        }
+        else{
+            resultSecond.innerHTML = `<h2>Oops!!it's incorrect try again</h2>`     
+        }
+       
     }
-    console.log(quesAngleOne.value,quesAngleTwo.value,quesAngleThree.value,+"\ncalculated third angle: "+calculatedAngleThree);
+    
+}
+    
+    // console.log(quesAngleOne.value,quesAngleTwo.value,quesAngleThree.value,typeof(calculatedAngleThree));
 }
 
-btnSecond.addEventListener("click",triangleThirdAngle,false)
+btnSecond.addEventListener("click",()=>{
+    triangleThirdAngle();
+    resetSecond.style.visibility = "visible";
+    resetSecond.addEventListener('click',()=>{
+        quesAngleOne.value = ""
+        quesAngleTwo.value = ""
+        quesAngleThree.value = ""
+        resultSecond.innerHTML = ""
+    })
+},false)
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
   }
+
+function NaNToZero(arg){
+    if(isNaN(arg)){
+        return  arg = 0
+    }
+    else{
+        return arg ;
+    }
+}
