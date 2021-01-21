@@ -45,6 +45,7 @@ btn.addEventListener("click",()=>{
         document.querySelector("#angle-two").value = ""
         document.querySelector("#angle-three").value = ""
         output.innerHTML = ""
+        result.innerHTML = ""
     })
 },false)
 
@@ -61,7 +62,7 @@ let quesAngleThree = document.querySelector("#ques-angle-three")
 document.body.appendChild(resultSecond)
 function triangleRandomValues(){
     
-    
+    //tom try adding 'reset' better functionality using "result var" innerHTML in both 1 and 2.
     //try tom.. to implement with arrays ,if can
     quesAngleOne.value = getRandomInt(1,150)
     quesAngleTwo.value = getRandomInt(1,150-quesAngleOne.value)
