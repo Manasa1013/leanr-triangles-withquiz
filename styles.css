@@ -97,3 +97,8 @@ form legend{
     color: gray;
     font-size: medium;
 }
+
+#score{
+    text-align: right;
+    color: #242424;
+}

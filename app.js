@@ -1,7 +1,12 @@
 let output = document.querySelector("#output-first");
 let reset = document.querySelector("#reset")
 let result = document.createElement('div')
-
+let score = document.querySelector('#score')
+let updateScore = score.value
+updateScore  = 0
+let boolOne = false
+let boolTwo = false
+updateScore = parseInt(updateScore,10)
 document.body.appendChild(result)
 //afterwards try with arrays to store inputs' data :it's done
 //tomorrow 2201 implement div result,resultSecond elements in index page itself
@@ -27,6 +32,12 @@ function triangleValidity(){
             output.innerHTML = sum;
             if(sum === 180){
             result.innerHTML = `<h1>It's a triangle</h1>`
+            if(updateScore===0 || updateScore === 1){
+                updateScore = updateScore+1
+                bool = true
+            }      
+            console.log("updateScore"+updateScore);
+            score.innerHTML = `<h3>${updateScore}</h3>`
             }
             else {
             if(sum !== 180){
@@ -102,6 +113,21 @@ function triangleThirdAngle(){
         calculatedAngleThree = NaNToZero(calculatedAngleThree);
     if(tempQuesAngleThree === calculatedAngleThree){
         resultSecond.innerHTML = `<h2>You entered right✔👌</h2>`
+        if(updateScore === 0 && boolOne === false){
+            updateScore = updateScore+1  
+        }   
+        else{
+            if(updateScore === 1 && boolOne === true){
+                updateScore = updateScore +1
+            }
+            else{
+                if(updateScore === 1 && bool === false){
+                    updateScore = 1
+                }
+            }
+        }
+        console.log("updateScore"+updateScore+"bool:"+bool);
+        score.innerHTML = `<h3>${updateScore}</h3>`
     }
     else{
         if(tempQuesAngleThree === 0){
